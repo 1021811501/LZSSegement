@@ -63,7 +63,7 @@
     }
 }
 -(void)setSelectedSegmentIndex:(int)selectedSegmentIndex{
-    //set方法中不要用self.
+    //set方法中不要用self.selectedSegmentIndex会调用它的set方法或get方法。这样就会出现get方法中调用get方法或者是set方法中调用set方法，如此不断重复下去，造成死循环，程序将崩溃。所以在这种地方，我们就只能使用_name的这种形式。
     _selectedSegmentIndex = selectedSegmentIndex;
     UIButton *btn = (UIButton *)[self viewWithTag:self.selectedSegmentIndex +1];
     [self segementSelect:btn];
