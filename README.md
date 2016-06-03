@@ -12,10 +12,8 @@
      segment.borderColor = kLoginBtnColor; //边框颜色
      segment.delegate = self;      //设置代理
      self.navigationItem.titleView = segment;
-到此,然后在实现代理方法就ok了.
-
- ###LZSSegementView会根据array中的字符串长度自动计算控件需要的长度
- 
+  到此,然后在实现代理方法就ok了
+##LZSSegementView会根据array中的字符串长度自动计算控件需要的长度
      //根据字数多少计算items的宽度
      -(float)calculateSegementItemWidthWith:(NSString *)itemTitles andFontSize:(int)fontSize{
       CGSize size = [itemTitles boundingRectWithSize:CGSizeMake(kScreenWidth, segementHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} context:nil].size;
